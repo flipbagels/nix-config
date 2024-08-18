@@ -48,7 +48,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -80,6 +80,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+  services.xserver.libinput.naturalScrolling = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lukas = {
