@@ -1,9 +1,10 @@
 { pkgs, lib, ... }: {
+  
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
 
   # https://gitlab.freedesktop.org/drm/amd/-/issues/2812#note_2190544 
-  boot.kernelParams = ["mem_sleep_default=deep" "rtc_cmos.use_acpi_alarm=1"];
+  boot.kernelParams = [ "rtc_cmos.use_acpi_alarm=1"];
 
   # suspend needs kernel 6.7 or later
   boot.kernelPackages =  lib.mkIf (lib.versionOlder pkgs.linux.version "6.7") pkgs.linuxPackages_latest;

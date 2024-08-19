@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./yoga-slim-7.nix
+      # ./suspend-and-hibernate.nix
     ];
 
   # Bootloader.
@@ -58,6 +59,12 @@
     layout = "gb";
     variant = "";
   };
+
+  # Suspend on lid closure
+  # services.logind = {
+  #   extraConfig = "HandlePowerKey=suspend";
+  #   lidSwitch = "suspend";
+  #    }; 
 
   # Configure console keymap
   console.keyMap = "uk";
