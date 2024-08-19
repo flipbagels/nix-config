@@ -9,9 +9,27 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.initrd.kernelModules = [];
+  boot.kernelModules = [ "kvm-intel" "kvm-amd" ]; # Adding kvm-amd solved audio issue even though device is intel?? Not sure if we need ampgpu though.
   boot.extraModulePackages = [ ];
+
+  # Allow trackpad to work on yoga slim 7
+  boot.blacklistedKernelModules = [ "elan_i2c" ];
+
+  # https://gitlab.freedesktop.org/drm/amd/-/issues/2812#note_2190544 
+  boot.kernelParams = [ "rtc_cmos.use_acpi_alarm=1"];
+
+  # suspend needs kernel 6.7 or later
+  boot.kernelPackages =  lib.mkIf (lib.versionOlder pkgs.linux.version "6.7") pkgs.linuxPackages_latest;
+
+  # https://gitlab.freedesktop.org/drm/amd/-/issues/2812#note_2190544 
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
+  boot.initrd.prepend = lib.mkOrder 0 [ "${pkgs.fetchurl {
+    url = "https://gitlab.freedesktop.org/drm/amd/uploads/9fe228c7aa403b78c61fb1e29b3b35e3/slim7-ssdt";
+    sha256 = "sha256-Ef4QTxdjt33OJEPLAPEChvvSIXx3Wd/10RGvLfG5JUs=";
+    name = "slim7-ssdt";
+  }}" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/cce5f462-a54f-4aee-98df-3149b69c3f39";
