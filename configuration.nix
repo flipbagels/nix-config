@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
     ];
 
+  # Enable nix flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -54,12 +57,6 @@
     layout = "gb";
     variant = "";
   };
-
-  # Suspend on lid closure
-  # services.logind = {
-  #   extraConfig = "HandlePowerKey=suspend";
-  #   lidSwitch = "suspend";
-  #    }; 
 
   # Configure console keymap
   console.keyMap = "uk";
