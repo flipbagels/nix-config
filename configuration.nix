@@ -69,6 +69,7 @@
     gnome-music
     gnome-weather
     geary # email reader
+    yelp # Help guide
   ]);
 
   # Configure keymap in X11
