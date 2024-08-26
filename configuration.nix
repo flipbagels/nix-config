@@ -52,7 +52,23 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
+    gedit # text editor
+    gnome-connections
+    gnome-console
+    gnome-photos
     gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    epiphany # web browser
+    evince # document viewer
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-weather
+    geary # email reader
   ]);
 
   # Configure keymap in X11
@@ -92,13 +108,16 @@
     description = "Lukas";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kate
+    #  kate
     #  thunderbird
     ];
   };
 
   # Install firefox.
   programs.firefox.enable = true;
+
+  # Gnome-terminal
+  programs.gnome-terminal.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

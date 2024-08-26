@@ -5,10 +5,11 @@
   home.homeDirectory = "/home/lukas";
 
   home.packages = with pkgs; [
-    gh
-    vscode
-    spotify
     discord
+    gh
+    okular
+    spotify
+    vscode
   ];
 
   programs.git = {
