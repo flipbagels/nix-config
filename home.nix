@@ -27,6 +27,10 @@
     "org/gnome/mutter" = {
       edge-tiling = true;
     };
+    "org/gnome/desktop/peripherals/mouse" = {
+      speed = 0.0;
+      natural-scroll = false;
+    };
   };
 
   home.stateVersion = "24.05";
