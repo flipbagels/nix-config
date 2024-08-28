@@ -9,8 +9,8 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = [ "kvm-intel" "kvm-amd" ]; # Adding kvm-amd solved audio issue even though device is intel?? Not sure if we need ampgpu though.
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelModules = [ "kvm-intel" "kvm-amd" ]; # Adding kvm-amd solved audio issue even though device is intel?? Not sure if we need amdgpu though.
   boot.extraModulePackages = [ ];
 
   # Allow trackpad to work on yoga slim 7

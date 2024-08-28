@@ -1,22 +1,36 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "lukas";
-  home.homeDirectory = "/home/lukas";
+  imports = [
+    # ./vscode.nix
+  ];
 
   home.packages = with pkgs; [
     discord
     gh
     #okular # pdf viewer
     spotify
-    vscode
   ];
+
+  home.username = "lukas";
+  home.homeDirectory = "/home/lukas";
 
   programs.git = {
     enable = true;
     userName = "Lukas Seier";
     userEmail = "lukas.seier12@gmail.com";
     aliases = {};
+  };
+
+  programs.vscode = {
+    enable = true;
+
+    extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+      mechatroner.rainbow-csv
+      ms-python.python
+      ms-toolsai.jupyter
+    ];
   };
 
   dconf.settings = {
