@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "config flake";
 
   inputs = {
     # Nix packages
@@ -13,11 +13,11 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
-        home-manager.nixosModules.home-manager{
+        ./system/configuration.nix
+        home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.lukas = import ./home.nix;
+          home-manager.users.lukas = import ./user;
         }
       ];
     };
