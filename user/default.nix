@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./dconf.nix
     ./git.nix
+    ./gnome.nix
     ./vscode.nix
   ];
 
