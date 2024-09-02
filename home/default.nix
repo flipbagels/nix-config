@@ -1,17 +1,23 @@
-{ config, pkgs, ... }:
+{ config, pkgs,  ... }:
 
 {
   imports = [
+    ./firefox.nix
     ./git.nix
     ./gnome.nix
     ./vscode.nix
   ];
 
   home.packages = with pkgs; [
+    deskreen
     discord
     gh
+    libreoffice
     #okular # pdf viewer
+    slack
     spotify
+    zoom-us
+    zotero_7
   ];
 
   home.username = "lukas";

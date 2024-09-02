@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let 
   gnomeExtensionsList = with pkgs.gnomeExtensions; [
@@ -19,12 +19,10 @@ in
     "org/gnome/shell".enabled-extensions =
       map (extension: extension.extensionUuid) gnomeExtensionsList;
 
-
-
-
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       show-battery-percentage = true;
+      # scaling-factor = lib.hm.gvariant.mkUint32 2;
 
       # gtk-theme = "Nordic;
     };
@@ -55,5 +53,9 @@ in
     "org/gnome/shell/extensions/user-theme" = {
       # name = "nordic";
     };
+
+    # "org/gnome/desktop/background" = {
+    #   picture-uri = "file://${./cat.jpg}";
+    # };
   };
 }
