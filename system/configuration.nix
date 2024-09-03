@@ -137,7 +137,9 @@
     file
     git
     libsForQt5.xp-pen-g430-driver # XP-pen support
+    unzip
     wget
+    zip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
