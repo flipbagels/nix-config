@@ -22,7 +22,6 @@ in
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       show-battery-percentage = true;
-      # scaling-factor = lib.hm.gvariant.mkUint32 2;
 
       # gtk-theme = "Nordic;
     };
@@ -54,9 +53,12 @@ in
       # name = "nordic";
     };
 
-    "org/gnome/desktop/background" = {
-      picture-uri = "file:///etc/nixos/images/winter.svg";
-      picture-uri-dark = "file:///etc/nixos/images/winter.svg";
-    };
+    
+    "org/gnome/desktop/background" =
+      let wallpaper = "forest-road.jpg";
+      in {
+        picture-uri = "file:///etc/nixos/images/${wallpaper}";
+        picture-uri-dark = "file:///etc/nixos/images/${wallpaper}";
+      };
   };
 }

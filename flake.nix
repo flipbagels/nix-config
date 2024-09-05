@@ -14,10 +14,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # nurpkgs.url = "github:nix-community/NUR";
-    swww = {
-      url = "github:LGFae/swww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # swww = {
+    #   url = "github:LGFae/swww";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # openconnect-sso = {
+    #   url = "github:vlaci/openconnect-sso";
+    #   input.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { self, nixpkgs, home-manager, ...  }@inputs: {

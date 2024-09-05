@@ -1,14 +1,17 @@
-{ config, pkgs,  ... }:
+{ config, pkgs, flake-inputs, ... }:
 
 {
   imports = [
+    ./bash.nix
     ./firefox.nix
     ./git.nix
     ./gnome.nix
+    # ./gtk.nix
     ./vscode.nix
   ];
 
   home.packages = with pkgs; [
+    openconnect
     deskreen
     discord
     gh
@@ -16,6 +19,8 @@
     #okular # pdf viewer
     slack
     spotify
+    teams-for-linux
+    wineWowPackages.waylandFull
     zoom-us
     zotero_7
   ];
