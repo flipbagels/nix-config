@@ -7,16 +7,16 @@
     ./git.nix
     ./gnome.nix
     # ./gtk.nix
+    ./python.nix
     ./vscode.nix
   ];
 
   home.packages = with pkgs; [
-    openconnect
-    deskreen
     discord
     gh
     libreoffice
-    #okular # pdf viewer
+    # okular # pdf viewer
+    openconnect
     slack
     spotify
     teams-for-linux

@@ -14,14 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # nurpkgs.url = "github:nix-community/NUR";
-    # swww = {
-    #   url = "github:LGFae/swww";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # openconnect-sso = {
-    #   url = "github:vlaci/openconnect-sso";
-    #   input.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs = { self, nixpkgs, home-manager, ...  }@inputs: {
@@ -31,11 +23,13 @@
       modules = [
         ./system/configuration.nix
         home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.lukas = import ./home;
-          home-manager.backupFileExtension = "hm-backup";
-          home-manager.extraSpecialArgs.flake-inputs = inputs;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.lukas = import ./home;
+            backupFileExtension = "hm-backup";
+            extraSpecialArgs.flake-inputs = inputs;
+          };
         }
       ];
     };
