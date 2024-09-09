@@ -13,7 +13,10 @@ let
   ];
 in
 {
-  home.packages = gnomeExtensionsList;
+  home.packages = with pkgs; [
+    gnome.gnome-remote-desktop
+    ]
+    ++ gnomeExtensionsList;
 
   dconf.settings = {
     "org/gnome/shell".enabled-extensions =

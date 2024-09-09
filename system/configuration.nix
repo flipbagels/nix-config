@@ -5,10 +5,10 @@
 { config, pkgs, lib, flake-inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./sunshine.nix
+  ];
 
   # Enable nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -156,10 +156,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.allowedTCPPorts = [ ];
+  networking.firewall.allowedUDPPorts = [ ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

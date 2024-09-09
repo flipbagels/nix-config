@@ -12,6 +12,7 @@
   ];
 
   home.packages = with pkgs; [
+    deskreen
     discord
     gh
     libreoffice
@@ -21,6 +22,7 @@
     spotify
     teams-for-linux
     wineWowPackages.waylandFull
+    # xwaylandvideobridge
     zoom-us
     zotero_7
   ];
