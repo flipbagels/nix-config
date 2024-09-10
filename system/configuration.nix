@@ -6,8 +6,10 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./gnome.nix
+    ./hardware.nix
     ./sunshine.nix
+    ./user.nix
   ];
 
   # Enable nix flakes
@@ -49,43 +51,6 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
-  services.xserver.desktopManager.gnome.enable = true;
-  programs.dconf.enable = true;
-  environment.gnome.excludePackages = (with pkgs; [
-    gedit # text editor
-    gnome-connections
-    gnome-console
-    gnome-photos
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    epiphany # web browser
-    evince # document viewer
-    gnome-calendar
-    gnome-characters
-    gnome-clocks
-    gnome-contacts
-    gnome-maps
-    gnome-music
-    gnome-weather
-    geary # email reader
-    yelp # Help guide
-  ]);
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
-
   # Configure console keymap
   console.keyMap = "uk";
 
@@ -110,17 +75,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lukas = {
-    isNormalUser = true;
-    description = "Lukas";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  kate
-    #  thunderbird
-    ];
-  };
 
   # Install firefox.
   programs.firefox.enable = true;
