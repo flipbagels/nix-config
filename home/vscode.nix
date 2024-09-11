@@ -11,5 +11,9 @@
       ms-toolsai.jupyter
       ms-vscode-remote.remote-ssh
     ];
+
+    userSettings = {
+      "files.autoSave" = "afterDelay";
+    };
   };
 }

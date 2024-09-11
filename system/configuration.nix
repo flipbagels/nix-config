@@ -36,7 +36,7 @@
 
   # Networking
   networking = {
-    hostName = "flipbagels";
+    hostName = "nixos";
     networkmanager = {
       enable = true;
     };

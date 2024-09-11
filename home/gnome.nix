@@ -6,7 +6,7 @@ let
     blur-my-shell
     compiz-windows-effect
     custom-accent-colors
-    # desktop-cube
+    # rounded-window-corners-reborn
     unblank
     user-themes
     tiling-assistant
