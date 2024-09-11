@@ -2,18 +2,30 @@
 
 {
   # Enable gnome and gdm
-  services.xserver = {
-    enable = true;
-    displayManager.gdm = {
+  services = {
+    libinput.enable = true; # Enable touchpad support
+    xserver = {
       enable = true;
-      wayland = true;
-    };
-    desktopManager.gnome = {
-      enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
+      desktopManager.gnome = {
+        enable = true;
+      };
+      xkb = {
+        layout = "gb";
+        variant = "";
+      };
     };
   };
 
-  programs.dconf.enable = true;
+  # System packages
+  environment.systemPackages = with pkgs; [
+    dconf
+    firefox
+    gnome.gnome-terminal
+  ];
 
   # Exclude following packages
   environment.gnome.excludePackages = (with pkgs; [
@@ -37,9 +49,6 @@
     yelp # Help guide
   ]);
 
-  # Configure keymap
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
+  # Remove NixOS manual
+  documentation.nixos.enable = false;
 }
