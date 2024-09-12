@@ -3,17 +3,12 @@
 {
   services.sunshine = {
     enable = true;
+    autoStart = false;
+    capSysAdmin = true;
 
     settings = {
       output_name = 1;
     };
-  };
-
-  security.wrappers.sunshine = {
-      owner = "root";
-      group = "root";
-      capabilities = "cap_sys_admin+p";
-      source = "${pkgs.sunshine}/bin/sunshine";
   };
 
   networking.firewall.allowedTCPPorts = [ 47984 47989 47990 48010 ];
