@@ -3,6 +3,10 @@
 {
   services.sunshine = {
     enable = true;
+
+    settings = {
+      output_name = 1;
+    };
   };
 
   security.wrappers.sunshine = {
