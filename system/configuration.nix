@@ -29,6 +29,7 @@
     file
     git
     libsForQt5.xp-pen-g430-driver # XP-pen support
+    neovim
     unzip
     wget
     zip

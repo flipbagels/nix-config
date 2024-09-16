@@ -10,10 +10,12 @@
       ms-python.python
       ms-toolsai.jupyter
       ms-vscode-remote.remote-ssh
+      vscodevim.vim
     ];
 
     userSettings = {
       "files.autoSave" = "afterDelay";
+      "editor.lineNumbers" = "relative";
     };
   };
 }

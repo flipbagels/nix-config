@@ -22,7 +22,6 @@
     spotify
     teams-for-linux
     wineWowPackages.waylandFull
-    # xwaylandvideobridge
     zoom-us
     zotero_7
   ];
