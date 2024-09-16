@@ -15,9 +15,11 @@
     deskreen
     discord
     gh
+    gimp
     libreoffice
-    # okular # pdf viewer
+    # okular
     openconnect
+    ripgrep
     slack
     spotify
     teams-for-linux

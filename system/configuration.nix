@@ -1,4 +1,4 @@
-{ config, pkgs, lib, flake-inputs, ... }:
+{ config, pkgs, pkgs-unstable, lib, flake-inputs, ... }:
 
 {
   imports = [
@@ -25,15 +25,19 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     file
+    gcc
     git
     libsForQt5.xp-pen-g430-driver # XP-pen support
-    neovim
+    gnumake
     unzip
     wget
+    xclip
     zip
-  ];
+  ]) ++ (with pkgs-unstable; [
+    neovim 
+  ]);
 
   # Networking
   networking = {

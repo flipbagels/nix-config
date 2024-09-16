@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -15,10 +16,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ...  }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ...  }@inputs: {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
-      specialArgs.flake-inputs = inputs;
+      specialArgs = {
+        flake-inputs = inputs;
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
       modules = [
         ./system/configuration.nix
         home-manager.nixosModules.home-manager {
@@ -27,7 +34,13 @@
             useUserPackages = true;
             users.lukas = import ./home;
             backupFileExtension = "hm-backup";
-            extraSpecialArgs.flake-inputs = inputs;
+            extraSpecialArgs = {
+              flake-inputs = inputs;
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            };
           };
         }
       ];

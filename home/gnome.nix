@@ -1,16 +1,17 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 
 let 
-  gnomeExtensionsList = with pkgs.gnomeExtensions; [
+  gnomeExtensionsList = (with pkgs.gnomeExtensions; [
     appindicator
     blur-my-shell
     compiz-windows-effect
     custom-accent-colors
-    # rounded-window-corners-reborn
     unblank
     user-themes
     tiling-assistant
-  ];
+  ]) ++ (with pkgs-unstable.gnomeExtensions; [
+    rounded-window-corners-reborn
+  ]);
 in
 {
   home.packages = with pkgs; [
