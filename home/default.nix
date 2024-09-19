@@ -9,6 +9,7 @@
     # ./gtk.nix
     ./python.nix
     ./vscode.nix
+    ./xdg.nix
   ];
 
   home.packages = with pkgs; [
