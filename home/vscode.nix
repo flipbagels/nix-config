@@ -10,6 +10,7 @@
       ms-python.python
       ms-toolsai.jupyter
       ms-vscode-remote.remote-ssh
+      sumneko.lua
       vscodevim.vim
     ];
 
