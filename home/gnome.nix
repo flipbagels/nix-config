@@ -61,8 +61,8 @@ in
     "org/gnome/desktop/background" =
       let wallpaper = "forest-road.jpg";
       in {
-        picture-uri = "file:///etc/nixos/images/${wallpaper}";
-        picture-uri-dark = "file:///etc/nixos/images/${wallpaper}";
+        picture-uri = "file:///etc/nixos/nixos-config/images/${wallpaper}";
+        picture-uri-dark = "file:///etc/nixos/nixos-config/images/${wallpaper}";
       };
   };
 }

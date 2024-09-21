@@ -17,14 +17,14 @@
     discord
     gh
     gimp
-    libreoffice
+    # libreoffice
     # okular
     openconnect
     ripgrep
     slack
     spotify
     teams-for-linux
-    wineWowPackages.waylandFull
+    # wineWowPackages.waylandFull
     zoom-us
     zotero_7
   ];
