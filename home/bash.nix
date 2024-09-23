@@ -8,7 +8,7 @@
 
     shellAliases = {
       cf = "cd /etc/nixos/nixos-config";
-      cfv = "cd /etc/nixos/nixvim-config";
+      cfv = "cd ~/.config/nvim/nixvim-config";
       df = "df -h";
       ga = "git add";
       gc = "git commit";
