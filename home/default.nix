@@ -1,4 +1,4 @@
-{ config, pkgs, flake-inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -12,7 +12,7 @@
     ./xdg.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     deskreen
     discord
     gh
@@ -27,6 +27,8 @@
     # wineWowPackages.waylandFull
     zoom-us
     zotero_7
+  ]) ++ [
+    inputs.nixvim.packages.x86_64-linux.default
   ];
 
   home.username = "lukas";

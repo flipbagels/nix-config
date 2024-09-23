@@ -1,7 +1,8 @@
-{ config, pkgs, pkgs-unstable, lib, flake-inputs, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 
 {
   imports = [
+    ./fonts.nix
     ./gui.nix
     ./hardware.nix
     ./sunshine.nix

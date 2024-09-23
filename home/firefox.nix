@@ -1,4 +1,4 @@
-{ config, pkgs, flake-inputs,  ... }:
+{ config, pkgs, inputs,  ... }:
 
 {
   programs.firefox = {
@@ -9,7 +9,7 @@
         id = 0;
         name = "default";
         isDefault = true;
-        extensions = with flake-inputs.firefox-addons.packages."x86_64-linux"; [
+        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
           darkreader
           ublock-origin
           zotero-connector
