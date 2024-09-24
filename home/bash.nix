@@ -21,9 +21,9 @@
       nrun = "nix run .# --";
       oxvpn = ''sudo echo \"Sudo first\" && openconnect https://vpn.ox.ac.uk --useragent=AnyConnect --cookieonly | sudo openconnect https://vpn.ox.ac.uk --useragent=AnyConnect --gnutls-priority="NORMAL:-VERS-ALL:+VERS-TLS1.2:+RSA:+AES-128-CBC:+SHA1" --cookie-on-stdin'';
       rb = "sudo nixos-rebuild switch --flake /etc/nixos/nixos-config";
-      uvim = "nix flake lock --update-input nixvim && sudo nixos-rebuild switch --flake /etc/nixos/nixos-config"; # update nixvim
+      rbv = "sudo nix flake lock --update-input nixvim /etc/nixos/nixos-config && sudo nixos-rebuild switch --flake /etc/nixos/nixos-config"; # update nixvim
       vi = "nvim";
-      vim = "nvim";
+      vim = "nix run ~/.config/nvim/nixvim-config";
     };
   };
 }
