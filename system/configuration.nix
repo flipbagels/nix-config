@@ -1,6 +1,10 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  lib,
+  ...
+}: {
   imports = [
     ./fonts.nix
     ./gui.nix
@@ -9,8 +13,8 @@
   ];
 
   system.stateVersion = "24.05";
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -20,25 +24,28 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
     ];
   };
 
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = (with pkgs; [
-    file
-    gcc
-    git
-    libsForQt5.xp-pen-g430-driver # XP-pen support
-    gnumake
-    unzip
-    wget
-    xclip
-    zip
-  ]) ++ (with pkgs-unstable; [
-    neovim 
-  ]);
+  environment.systemPackages =
+    (with pkgs; [
+      file
+      gcc
+      git
+      gnumake
+      libsForQt5.xp-pen-g430-driver # XP-pen support
+      sshfs
+      unzip
+      wget
+      xclip
+      zip
+    ])
+    ++ (with pkgs-unstable; [
+      neovim
+    ]);
 
   # Networking
   networking = {
@@ -85,7 +92,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    
+
     # jack.enable = true;
 
     # media-session.enable = true;
