@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.vscode = {
     enable = true;
 
@@ -17,6 +19,8 @@
     userSettings = {
       "files.autoSave" = "afterDelay";
       "editor.lineNumbers" = "relative";
+      "vim.useSystemClipboard" = "true";
     };
   };
 }
+
