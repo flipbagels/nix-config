@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   inputs,
   ...
 }: {
@@ -10,6 +11,7 @@
     ./git.nix
     ./gnome.nix
     # ./gtk.nix
+    ./kitty.nix
     ./python.nix
     ./vscode.nix
     ./xdg.nix
@@ -21,6 +23,7 @@
       discord
       gh
       gimp
+      kitty
       # libreoffice
       # okular
       openconnect
@@ -32,6 +35,9 @@
       zoom-us
       zotero_7
     ])
+    ++ (with pkgs-unstable; [
+      yazi
+    ])
     ++ [
       inputs.nixvim.packages.x86_64-linux.default
     ];
@@ -42,4 +48,3 @@
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
 }
-

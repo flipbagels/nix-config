@@ -11,12 +11,14 @@
       cf = "cd /etc/nixos/nixos-config";
       cfv = "cd ~/.config/nvim/nixvim-config";
       df = "df -h";
+      nano = "nvim";
       ngc = "sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system old && nix-collect-garbage -d";
       nrun = "nix run .# --";
       rb = "sudo nixos-rebuild switch --flake /etc/nixos/nixos-config";
       rbv = "sudo nix flake lock --update-input nixvim /etc/nixos/nixos-config && sudo nixos-rebuild switch --flake /etc/nixos/nixos-config"; # update nixvim
-      vi = "nvim";
-      vim = "nix run ~/.config/nvim/nixvim-config";
+      v = "nvim";
+      vi = "nix run ~/.config/nvim/nixvim-config/";
+      vim = "nvim";
 
       # Git
       ga = "git add";
