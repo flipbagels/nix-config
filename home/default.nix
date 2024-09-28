@@ -13,6 +13,7 @@
     # ./gtk.nix
     ./kitty.nix
     ./python.nix
+    ./rust.nix
     ./vscode.nix
     ./xdg.nix
   ];
