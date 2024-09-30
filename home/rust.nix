@@ -2,10 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    rustup
+    rustc
+    cargo
   ];
-
-  home.sessionVariables = {
-    RUSTUP_TOOLCHAIN = "stable";
-  };
 }
