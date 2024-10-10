@@ -3,7 +3,6 @@
   pkgs,
   pkgs-unstable,
   inputs,
-  gui,
   ...
 }: {
   imports = [

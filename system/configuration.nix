@@ -3,7 +3,6 @@
   pkgs,
   pkgs-unstable,
   lib,
-  gui,
   ...
 }:
 
@@ -13,7 +12,7 @@
     ./hardware.nix
     ./sunshine.nix
   ] ++ [
-    ./${gui}.nix
+    ./hyprland.nix
     ./gnome.nix
   ];
 

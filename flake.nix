@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,17 +29,15 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    nix-darwin,
     nixvim,
     ...
   } @ inputs: 
-  let
-    gui = "hyprland"; # Either gnome or hyprland
-  in {
+  {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
-        inherit gui;
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -51,7 +54,6 @@
             backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
-              inherit gui;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
                 config.allowUnfree = true;
@@ -59,6 +61,36 @@
             };
           };
         }
+      ];
+    };
+
+    darwinConfiguration.dtcmaclap12 = nix-darwin.lib.darwinSystem rec {
+      system = "aarch64-darwin";
+      specialArgs = {
+        inherit inputs;
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+      modules = [
+        ./darwin
+        # home-manager.nixosModules.home-manager
+        # {
+        #   home-manager = {
+        #     useGlobalPkgs = true;
+        #     useUserPackages = true;
+        #     users.lukas = import ./;
+        #     backupFileExtension = "backup";
+        #     extraSpecialArgs = {
+        #       inherit inputs;
+        #       pkgs-unstable = import nixpkgs-unstable {
+        #         inherit system;
+        #         config.allowUnfree = true;
+        #       };
+        #     };
+        #   };
+        # }
       ];
     };
   };
