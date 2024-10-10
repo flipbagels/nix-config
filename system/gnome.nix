@@ -6,18 +6,20 @@
     libinput.enable = true; # Enable touchpad support
     xserver = {
       enable = true;
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
+      # displayManager.gdm = {
+      #   enable = true;
+      #   wayland = true;
+      # };
       desktopManager.gnome = {
         enable = true;
       };
-      xkb = {
-        layout = "gb";
-        variant = "";
-      };
     };
+  };
+
+  # UK keyboard layout
+  services.xserver.xkb = {
+    layout = "gb";
+    variant = "";
   };
 
   # System packages

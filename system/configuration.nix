@@ -3,13 +3,18 @@
   pkgs,
   pkgs-unstable,
   lib,
+  gui,
   ...
-}: {
+}:
+
+{
   imports = [
     ./fonts.nix
-    ./gui.nix
     ./hardware.nix
     ./sunshine.nix
+  ] ++ [
+    ./${gui}.nix
+    ./gnome.nix
   ];
 
   system.stateVersion = "24.05";
@@ -36,11 +41,12 @@
       gcc
       git
       gnumake
+      kitty
       libsForQt5.xp-pen-g430-driver # XP-pen support
       sshfs
       unzip
       wget
-      xclip
+      wl-clipboard
       zip
     ])
     ++ (with pkgs-unstable; [

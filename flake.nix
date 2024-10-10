@@ -26,11 +26,15 @@
     home-manager,
     nixvim,
     ...
-  } @ inputs: {
+  } @ inputs: 
+  let
+    gui = "hyprland"; # Either gnome or hyprland
+  in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
+        inherit gui;
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -44,9 +48,10 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.lukas = import ./home;
-            backupFileExtension = "hm-backup";
+            backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
+              inherit gui;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
                 config.allowUnfree = true;

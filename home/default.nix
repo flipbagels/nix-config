@@ -3,19 +3,22 @@
   pkgs,
   pkgs-unstable,
   inputs,
+  gui,
   ...
 }: {
   imports = [
     ./bash
     ./firefox.nix
     ./git.nix
-    ./gnome.nix
     # ./gtk.nix
     ./kitty.nix
     ./python.nix
     ./rust.nix
     ./vscode.nix
     ./xdg.nix
+  ] ++ [
+    ./hyprland
+    ./gnome.nix
   ];
 
   home.packages =
