@@ -64,7 +64,7 @@
       ];
     };
 
-    darwinConfiguration.dtcmaclap12 = nix-darwin.lib.darwinSystem rec {
+    darwinConfigurations.dtcmaclap12 = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
       specialArgs = {
         inherit inputs;
