@@ -4,6 +4,8 @@
   enviroment.systemPackages =
     [
       pkgs-unstable.neovim
+      pkgs.git
+      pkgs.gh
     ];
 
   # Auto upgrade nix package and the daemon service
