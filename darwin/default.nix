@@ -1,7 +1,7 @@
-{ config, pkgs, pkgs-unstable, inputs }:
+{ config, pkgs, pkgs-unstable, lib, inputs, ... }:
 
 {
-  enviroment.systemPackages =
+  environment.systemPackages =
     [
       pkgs-unstable.neovim
       pkgs.git
@@ -12,6 +12,8 @@
   services.nix-daemon.enable = true;
 
   nix.settings.experimental-features = "nix-command flakes";
+
+  programs.zsh.enable = true;
 
   system.stateVersion = 5;
 }
