@@ -75,22 +75,22 @@
       };
       modules = [
         ./darwin
-        # home-manager.nixosModules.home-manager
-        # {
-        #   home-manager = {
-        #     useGlobalPkgs = true;
-        #     useUserPackages = true;
-        #     users.lukas = import ./;
-        #     backupFileExtension = "backup";
-        #     extraSpecialArgs = {
-        #       inherit inputs;
-        #       pkgs-unstable = import nixpkgs-unstable {
-        #         inherit system;
-        #         config.allowUnfree = true;
-        #       };
-        #     };
-        #   };
-        # }
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.seierl = import ./darwin/home.nix;
+            backupFileExtension = "backup";
+            extraSpecialArgs = {
+              inherit inputs;
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            };
+          };
+        }
       ];
     };
   };

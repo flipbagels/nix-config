@@ -2,10 +2,15 @@
 
 {
   environment.systemPackages =
-    [
-      pkgs-unstable.neovim
-      pkgs.git
-      pkgs.gh
+    ( with pkgs; [
+      git
+      gh
+    ])
+    ++ ( with pkgs-unstable; [
+      neovim
+    ])
+    ++ [
+      inputs.nixvim.packages.aarch64-darwin.default
     ];
 
   # Auto upgrade nix package and the daemon service
@@ -14,6 +19,8 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   programs.zsh.enable = true;
+
+  users.users.seierl.home = "/Users/seierl";
 
   system.stateVersion = 5;
 }
