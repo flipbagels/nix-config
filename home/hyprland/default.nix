@@ -81,12 +81,12 @@
         };
         gestures.workspace_swipe = true;
         bind = [
-          "$SUPER, N, exec, ${terminal}"
+          "$SUPER, RETURN, exec, ${terminal}"
           "SUPER, Q, killactive"
           # "$mainMod, X, exit"
           "SUPER, E, exec, ${fileManager}"
           "SUPER, F, togglefloating"
-          "SUPER, M, exec, ${menu}"
+          "SUPER, SPACE, exec, ${menu}"
           "SUPER, P, pseudo" # dwindle
           "SUPER, O, togglesplit"
           
