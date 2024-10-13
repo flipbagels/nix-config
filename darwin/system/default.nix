@@ -31,6 +31,7 @@
 
   system.defaults = {
     NSGlobalDomain = {
+      AppleInterfaceStyle = "Dark";
       ApplePressAndHoldEnabled = false;
       KeyRepeat = 2;
     };
