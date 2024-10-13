@@ -12,7 +12,6 @@
       discord
       git
       gh
-      karabiner-elements
       kitty
       mkalias
       slack
