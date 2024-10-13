@@ -31,6 +31,7 @@
 
   system.defaults = {
     NSGlobalDomain = {
+      AppleICUForce24HourTime = true;
       AppleInterfaceStyle = "Dark";
       ApplePressAndHoldEnabled = false;
       KeyRepeat = 2;
@@ -45,7 +46,9 @@
       tilesize = 40;
       show-recents = false;
     };
-    finder.AppleShowAllExtensions = true;
+    finder = {
+      AppleShowAllExtensions = true;
+      FXPreferredViewStyle = "clmv";
     screencapture.location = "~/Pictures/screenshots";
   };
 
