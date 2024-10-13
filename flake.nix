@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +32,7 @@
     nixpkgs-unstable,
     home-manager,
     nix-darwin,
+    nix-homebrew,
     nixvim,
     ...
   } @ inputs: 
@@ -44,13 +47,13 @@
         };
       };
       modules = [
-        ./system/configuration.nix
+        ./nixos/system/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.lukas = import ./home;
+            users.lukas = import ./nixos/home;
             backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
@@ -64,7 +67,7 @@
       ];
     };
 
-    darwinConfigurations.dtcmaclap12 = nix-darwin.lib.darwinSystem rec {
+    darwinConfigurations.Lukass-MacBook-Air = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
       specialArgs = {
         inherit inputs;
@@ -74,13 +77,13 @@
         };
       };
       modules = [
-        ./darwin
+        ./darwin/system
         home-manager.darwinModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.seierl = import ./darwin/home.nix;
+            users.seierl = import ./darwin/home;
             backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
@@ -89,6 +92,15 @@
                 config.allowUnfree = true;
               };
             };
+          };
+        }
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = "seierl";
+            autoMigrate = true;
           };
         }
       ];

@@ -6,23 +6,22 @@
   ...
 }: {
   imports = [
-    ./bash
-    ./firefox.nix
-    ./git.nix
-    # ./gtk.nix
-    ./kitty.nix
-    ./python.nix
-    ./rust.nix
-    ./vscode.nix
-    ./xdg.nix
+    ../../modules/shell/bash.nix
+    ../../modules/firefox.nix
+    ../../modules/git.nix
+    # ../../modules/gtk.nix
+    ../../modules/kitty.nix
+    ../../modules/python.nix
+    ../../modules/rust.nix
+    ../../modules/vscode.nix
+    ../../modules/xdg.nix
   ] ++ [
-    ./hyprland
-    ./gnome.nix
+    ../../modules/hyprland
+    ../../modules/gnome.nix
   ];
 
   home.packages =
     (with pkgs; [
-      deskreen
       discord
       gh
       gimp

@@ -5,20 +5,20 @@
   inputs,
   ...
 }: {
-#  imports = [
-#    ./bash
-#    ./firefox.nix
-#    ./git.nix
-#    ./kitty.nix
-#    ./python.nix
-#    ./rust.nix
-#    ./vscode.nix
-#  ];
+    imports = [
+      ../../modules/shell/zsh.nix
+      ../../modules/git.nix
+      ../../modules/karabiner
+      ../../modules/kitty.nix
+      ../../modules/python.nix
+      ../../modules/rust.nix
+      ../../modules/vscode.nix
+    ];
 
+  # Only include CLI tools here. GUI applications declared in system config so that they show up in spotlight search
   home.packages =
     (with pkgs; [
       gh
-      kitty
       openconnect
       ripgrep
     ])
