@@ -7,73 +7,29 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "bottom";
+        position = "top";
+        height = 24;
         modules-left = [
-          "sway/workspaces"
-          "custom/right-arrow-dark"
+          "hyprland/workspaces"
         ];
         modules-center = [
-          "custom/left-arrow-dark"
-          "clock#1"
-          "custom/left-arrow-light"
-          "custom/left-arrow-dark"
-          "clock#2"
-          "custom/right-arrow-dark"
-          "custom/right-arrow-light"
-          "clock#3"
-          "custom/right-arrow-dark"
+          "clock"
         ];
         modules-right = [
-          "custom/left-arrow-dark"
           "pulseaudio"
-          "custom/left-arrow-light"
-          "custom/left-arrow-dark"
-          "memory"
-          "custom/left-arrow-light"
-          "custom/left-arrow-dark"
+          "network"
           "cpu"
-          "custom/left-arrow-light"
-          "custom/left-arrow-dark"
+          "memory"
           "battery"
-          "custom/left-arrow-light"
-          "custom/left-arrow-dark"
-          "disk"
-          "custom/left-arrow-light"
-          "custom/left-arrow-dark"
           "tray"
         ];
-        "custom/left-arrow-dark" = {
-          format = "";
-          tooltip = false;
-        };
-        "custom/left-arrow-light" = {
-          format = "";
-          tooltip = false;
-        };
-        "custom/right-arrow-dark" = {
-          format = "";
-          tooltip = false;
-        };
-        "custom/right-arrow-light" = {
-          format = "";
-          tooltip = false;
-        };
         "hyprland/workspaces" = {
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
           format = "{icon}";
         };
-        "clock#1" = {
-          format = "{:%a}";
-          tooltip = false;
-        };
-        "clock#2" = {
-          format = "{:%H:%M}";
-          tooltip = false;
-        };
-        "clock#3" = {
-          format = "{:%m-%d}";
-          tooltip = false;
+        clock = {
+          format-all = "{:%Y-%m-%d}";
         };
         pulseaudio = {
           format = "{icon} {volume:2}%";
@@ -90,6 +46,12 @@
           on-click = "paximer -t";
           on-click-right = "pavucontrol";
         };
+      };
+      network = {
+        interface = "wlp2s0";
+        format-wifi = "{essid} ({signalStrength}%) ";
+        format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
+        format-disconnected = "Disconnected ⚠";
       };
       memory = {
         interval = 5;
@@ -113,11 +75,6 @@
           ""
           ""
         ];
-      };
-      disk = {
-        interval = 5;
-        format = "Disk {percentage_used:2}%";
-        path = "/";
       };
       tray = {
         icon-size = 20;

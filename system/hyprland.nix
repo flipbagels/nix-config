@@ -5,9 +5,9 @@
   services = {
     xserver.enable = true;
     libinput.enable = true; # Enable touchpad support
-    displayManager.sddm = {
-      enable = true;
-    };
+    # displayManager.sddm = {
+    #   enable = true;
+    # };
   };
 
 
