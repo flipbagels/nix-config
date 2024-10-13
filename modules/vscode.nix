@@ -17,8 +17,9 @@
     ];
 
     userSettings = {
-      "files.autoSave" = "afterDelay";
       "editor.lineNumbers" = "relative";
+      "files.autoSave" = "afterDelay";
+      "update.mode" = "none";
       "vim.useSystemClipboard" = "true";
     };
   };
