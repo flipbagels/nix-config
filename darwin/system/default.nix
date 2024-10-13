@@ -49,6 +49,7 @@
     finder = {
       AppleShowAllExtensions = true;
       FXPreferredViewStyle = "clmv";
+    };
     screencapture.location = "~/Pictures/screenshots";
   };
 
