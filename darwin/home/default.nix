@@ -8,7 +8,6 @@
     imports = [
       ../../modules/shell/zsh.nix
       ../../modules/git.nix
-      ../../modules/karabiner
       ../../modules/kitty.nix
       ../../modules/python.nix
       ../../modules/rust.nix
