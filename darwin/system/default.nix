@@ -4,6 +4,7 @@
   imports = [
     ./fonts.nix
     ../homebrew
+    ./yabai.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -14,7 +15,10 @@
       gh
       kitty
       mkalias
+      skhd
       slack
+      wget
+      yabai
     ])
     ++ ( with pkgs-unstable; [
       neovim
@@ -83,7 +87,9 @@
 
   nix.settings.experimental-features = "nix-command flakes";
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+  };
 
   users.users.seierl.home = "/Users/seierl";
 
