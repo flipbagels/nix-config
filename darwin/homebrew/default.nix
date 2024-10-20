@@ -7,6 +7,7 @@
       # "mas"
     ];
     casks = [
+      "docker"
       "firefox"
       "spotify"
       "zotero"
