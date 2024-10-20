@@ -4,6 +4,7 @@
   imports = [
     ./fonts.nix
     ../homebrew
+    ./skhd.nix
     ./yabai.nix
   ];
 
@@ -17,6 +18,7 @@
       mkalias
       skhd
       slack
+      unnaturalscrollwheels
       wget
       yabai
     ])
