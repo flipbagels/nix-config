@@ -6,6 +6,7 @@
   ...
 }: {
     imports = [
+      ./aerospace
       ../../modules/shell/zsh.nix
       ../../modules/git.nix
       ../../modules/kitty.nix
@@ -22,6 +23,7 @@
       ripgrep
     ])
     ++ (with pkgs-unstable; [
+      aerospace
       yazi
     ])
     ++ [

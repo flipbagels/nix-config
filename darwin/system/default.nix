@@ -4,8 +4,8 @@
   imports = [
     ./fonts.nix
     ../homebrew
-    ./skhd.nix
-    ./yabai.nix
+    # ./skhd.nix
+    # ./yabai.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -23,6 +23,7 @@
       yabai
     ])
     ++ ( with pkgs-unstable; [
+      aerospace
       neovim
       vscode
     ])
@@ -31,6 +32,7 @@
     ];
 
   system.defaults.CustomUserPreferences = {
+    "com.apple.dock".expose-group-by-app = true;  # Enable grouping of windows by application. Useful for aerospace tiling manager.
   };
 
   security.pam.enableSudoTouchIdAuth = true;
