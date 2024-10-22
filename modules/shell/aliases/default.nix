@@ -32,7 +32,7 @@
 
   # Remote
   oxvpn = ''sudo echo \"Sudo first\" && openconnect https://vpn.ox.ac.uk --useragent=AnyConnect --cookieonly | sudo openconnect https://vpn.ox.ac.uk --useragent=AnyConnect --gnutls-priority="NORMAL:-VERS-ALL:+VERS-TLS1.2:+RSA:+AES-128-CBC:+SHA1" --cookie-on-stdin'';
-  mhydra = builtins.readFile ./mhydra.sh;
+  mhydra = "bash ${./mhydra.sh}";
   umhydra = "fusermount -u ~/mnt/hydra && echo 'Successfully unmounted ~/mnt/hydra/'";
   hydra = "cd ~/mnt/hydra";
   KILLhydra = "kill $(ps aux | grep [h]ydra.physics.ox.ac.uk | awk '{print $2}')";
