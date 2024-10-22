@@ -18,6 +18,7 @@
       mkalias
       skhd
       slack
+      sshfs
       unnaturalscrollwheels
       wget
       yabai
@@ -32,7 +33,6 @@
     ];
 
   system.defaults.CustomUserPreferences = {
-    "com.apple.dock".expose-group-by-app = true;  # Enable grouping of windows by application. Useful for aerospace tiling manager.
   };
 
   security.pam.enableSudoTouchIdAuth = true;
