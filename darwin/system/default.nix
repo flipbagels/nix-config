@@ -26,6 +26,7 @@
     ++ ( with pkgs-unstable; [
       aerospace
       neovim
+      teams
       vscode
     ])
     ++ [
