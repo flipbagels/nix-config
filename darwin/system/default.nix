@@ -63,6 +63,7 @@
     screencapture.location = "~/Pictures/screenshots";
   };
 
+  # This line ensures that aliases are created for spotlight search for apps installed with nix
   system.activationScripts.applications.text = let
     env = pkgs.buildEnv {
       name = "system-applications";
