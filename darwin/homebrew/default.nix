@@ -4,7 +4,7 @@
   homebrew = {
     enable = true;
     brews = [
-      # "mas"
+      "mas"
     ];
     casks = [
       "docker"
