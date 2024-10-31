@@ -11,6 +11,7 @@
       "firefox"
       "spotify"
       "zotero"
+      "whatsapp"
     ];
     masApps = {
     };
