@@ -27,6 +27,7 @@
       aerospace
       neovim
       obsidian
+      rectangle
       teams
       vscode
     ])
