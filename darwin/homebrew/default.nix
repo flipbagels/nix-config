@@ -12,6 +12,7 @@
       "spotify"
       "zotero"
       "whatsapp"
+      "zoom"
     ];
     masApps = {
       "Microsoft-Word" = 462054704;
