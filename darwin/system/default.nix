@@ -21,7 +21,6 @@
       sshfs
       unnaturalscrollwheels
       wget
-      yabai
     ])
     ++ ( with pkgs-unstable; [
       aerospace
