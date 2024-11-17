@@ -11,13 +11,11 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages =
     ( with pkgs; [
-      discord
       git
       gh
       kitty
       mkalias
       skhd
-      slack
       sshfs
       unnaturalscrollwheels
       wget
@@ -25,9 +23,7 @@
     ++ ( with pkgs-unstable; [
       aerospace
       neovim
-      obsidian
       rectangle
-      teams
       vscode
     ])
     ++ [
@@ -45,6 +41,7 @@
       AppleInterfaceStyle = "Dark";
       ApplePressAndHoldEnabled = false;
       KeyRepeat = 2;
+      NSAutomaticSpellingCorrectionEnabled = false;
     };
     dock = {
       autohide = true;

@@ -7,8 +7,12 @@
       "mas"
     ];
     casks = [
+      "discord"
       "docker"
       "firefox"
+      "microsoft-teams"
+      "obsidian"
+      "slack"
       "spotify"
       "zotero"
       "whatsapp"
