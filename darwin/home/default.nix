@@ -9,6 +9,7 @@
       ./aerospace
       ../../modules/shell/zsh.nix
       ../../modules/git.nix
+      ../../modules/julia.nix
       ../../modules/kitty.nix
       ../../modules/python.nix
       ../../modules/rust.nix
