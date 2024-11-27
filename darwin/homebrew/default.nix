@@ -5,6 +5,7 @@
     enable = true;
     brews = [
       "mas"
+      "swig"
     ];
     casks = [
       "discord"
