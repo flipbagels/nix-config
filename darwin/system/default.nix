@@ -41,6 +41,7 @@
       AppleInterfaceStyle = "Dark";
       ApplePressAndHoldEnabled = false;
       KeyRepeat = 2;
+      NSAutomaticInlinePredictionEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
     };
     dock = {
