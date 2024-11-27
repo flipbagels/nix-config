@@ -3,6 +3,11 @@ if [ "$TERM" = "xterm-kitty" ]; then
   alias ssh="kitty +kitten ssh"
 fi
 
+# Put brews in PATH
+if [[ $(uname -m) == 'arm64' ]]; then
+     eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Customize Powerlevel10k prompt options
 export POWERLEVEL9K_MODE='nerdfont-complete'
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
