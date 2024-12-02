@@ -21,6 +21,7 @@
     ];
     masApps = {
       "Microsoft-Word" = 462054704;
+      "Microsoft-Outlook" = 985367838;
       "Microsoft-PowerPoint" = 462062816;
       "Microsoft-Excel" = 462058435;
     };
