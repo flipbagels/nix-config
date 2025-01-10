@@ -5,7 +5,7 @@ let
 in
 pkgs.mkShell {
   buildInputs = [
-    (pkgs.python3.withPackages (python-pkgs: [
+    (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
       # select Python packages here
       
     ]))

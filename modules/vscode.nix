@@ -6,7 +6,7 @@
   programs.vscode = {
     enable = true;
 
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-marketplace; [
       jnoortheen.nix-ide
       mechatroner.rainbow-csv
       ms-python.python

@@ -22,6 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     # Custom flakes
     nixvim.url = "github:flipbagels/nixvim-config";
   };
@@ -33,6 +35,7 @@
     home-manager,
     nix-darwin,
     nix-homebrew,
+    nix-vscode-extensions,
     nixvim,
     ...
   } @ inputs: 
@@ -67,7 +70,7 @@
       ];
     };
 
-    darwinConfigurations.dtcmaclap12 = nix-darwin.lib.darwinSystem rec {
+    darwinConfigurations.Lukass-MacBook-Air = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
       specialArgs = {
         inherit inputs;
