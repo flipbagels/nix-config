@@ -168,12 +168,20 @@ if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'firefox'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'obsidian'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'org.zotero.zotero'
 run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'outlook'
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'slack'
