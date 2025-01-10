@@ -20,6 +20,7 @@
       gh
       kitty
       mkalias
+      monitorcontrol
       skhd
       sshfs
       unnaturalscrollwheels
