@@ -28,6 +28,7 @@
     ])
     ++ ( with pkgs-unstable; [
       aerospace
+      betterdisplay
       neovim
       rectangle
       vscode
