@@ -20,7 +20,8 @@
       "editor.lineNumbers" = "relative";
       "files.autoSave" = "afterDelay";
       "update.mode" = "none";
-      "vim.useSystemClipboard" = "true";
+      "vim.useSystemClipboard" = true;
+      "jupyter.askForKernelRestart" = false;
     };
   };
 }
