@@ -11,7 +11,7 @@ fi
 # Customize Powerlevel10k prompt options
 export POWERLEVEL9K_MODE='nerdfont-complete'
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv time)
 export POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 export POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_unique"
@@ -31,3 +31,6 @@ export POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 # Status customization
 export POWERLEVEL9K_STATUS_VERBOSE=false
 export POWERLEVEL9K_STATUS_OK=true
+
+# Virtual environments
+# POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=true
