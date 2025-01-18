@@ -11,9 +11,10 @@
       size = 16;
     };
     extraConfig = "
-      enabled_layouts horizontal
+      enabled_layouts horizontal, vertical
 
       # Mappings
+      map ctrl+shift+/ next_layout
       map ctrl+shift+n next_tab
       map ctrl+shift+p previous_tab
       map ctrl+h neighboring_window left
