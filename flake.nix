@@ -22,7 +22,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    # nix-vscode-extensions = {
+    #   url = "github:nix-community/nix-vscode-extensions";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
+
+    mac-app-util.url = "github:hraban/mac-app-util";
 
     # Custom flakes
     nixvim.url = "github:flipbagels/nixvim-config";
@@ -35,7 +40,7 @@
     home-manager,
     nix-darwin,
     nix-homebrew,
-    nix-vscode-extensions,
+    mac-app-util,
     nixvim,
     ...
   } @ inputs: 
@@ -81,12 +86,16 @@
       };
       modules = [
         ./darwin/system
+        mac-app-util.darwinModules.default
         home-manager.darwinModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             users.seierl = import ./darwin/home;
+            sharedModules = [
+              mac-app-util.homeManagerModules.default
+            ];
             backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
