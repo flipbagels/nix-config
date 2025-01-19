@@ -1,12 +1,15 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   programs.vscode = {
     enable = true;
+    package = pkgs-unstable.vscode;
+    mutableExtensionsDir = false;
 
-    extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    extensions = pkgs-unstable.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "tokyo-night";
         publisher = "enkia";
@@ -37,6 +40,18 @@
         version = "2024.22.2";
         sha256 = "uVv4kpTf0W82Gvoju0Q/HKf6SpN2mwuYO7NItlRoezI=";
       }
+      # {
+      #   name = "vscode-pylance";
+      #   publisher = "ms-python";
+      #   version = "2024.12.1";
+      #   sha256 = "LpHbXthVHvrVZ1xqBTDfF1RjzgEilQVVHfy0tlum/BU=";
+      # }
+      # {
+      #   name = "debugpy";
+      #   publisher = "ms-python";
+      #   version = "2024.14.0";
+      #   sha256 = "tGbfjv1ipnYbea5dgVCF0pE0wZ8zOV61MkL+DTsN0ls=";
+      # }
       {
         name = "jupyter";
         publisher = "ms-toolsai";
@@ -75,6 +90,7 @@
       "vim.useSystemClipboard" = true;
       "jupyter.askForKernelRestart" = false;
       "editor.minimap.enabled" = false;
+      "workbench.colorTheme" = "Tokyo Night";
     };
   };
 }
