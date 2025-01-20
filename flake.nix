@@ -49,6 +49,7 @@
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
+          inherit system;
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -65,6 +66,7 @@
             backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
+              inherit system;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
                 config.allowUnfree = true;
@@ -79,6 +81,7 @@
       system = "aarch64-darwin";
       specialArgs = {
         inherit inputs;
+        inherit system;
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -99,6 +102,7 @@
             backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
+              inherit system;
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
                 config.allowUnfree = true;
