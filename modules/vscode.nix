@@ -35,6 +35,12 @@
         sha256 = "WKgVHkpY6xjPXcgKl3V4D4tmb2W+1+IN3gedHZ5SRuU=";
       }
       {
+        name = "even-better-toml";
+        publisher = "tamasfe";
+        version = "0.21.2";
+        sha256 = "IbjWavQoXu4x4hpEkvkhqzbf/NhZpn8RFdKTAnRlCAg=";
+      }
+      {
         name = "python";
         publisher = "ms-python";
         version = "2024.22.2";
@@ -91,6 +97,13 @@
       "jupyter.askForKernelRestart" = false;
       "editor.minimap.enabled" = false;
       "workbench.colorTheme" = "Tokyo Night";
+      "editor.autoClosingBrackets" = "never";
+      "editor.autoClosingComments" = "never";
+      "editor.autoClosingDelete" = "never";
+      "editor.autoClosingOvertype" = "never";
+      "editor.autoClosingQuotes" = "never";
+      "editor.autoSurround" = "never";
+      "editor.acceptSuggestionOnEnter" =  "off";
     };
   };
 }
