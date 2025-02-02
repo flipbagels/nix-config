@@ -1,8 +1,16 @@
 {
   config,
   pkgs,
+  system,
   ...
-}: {
+}:
+
+let
+  darwinExtraConfig = if system == "aarch64-darwin" then ''
+    # Darwin specific config
+    hide_window_decorations titlebar-only
+  '' else "";
+in {
   programs.kitty = {
     enable = true;
     theme = "Corvine";
@@ -21,6 +29,8 @@
       map ctrl+j neighboring_window down
       map ctrl+k neighboring_window up
       map ctrl+l neighboring_window left
+
+      ${darwinExtraConfig}
     ";
   };
 }
