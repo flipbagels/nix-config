@@ -30,7 +30,7 @@ in {
       map ctrl+k neighboring_window up
       map ctrl+l neighboring_window left
 
-      ${darwinExtraConfig}
-    ";
+    "
+    + darwinExtraConfig;
   };
 }
