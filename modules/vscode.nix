@@ -76,6 +76,12 @@
         version = "0.116.1";
         sha256 = "onDOybZsYMZltaVDP70quvZ3pejPsc0qvM+e2aLisXQ=";
       }
+      {
+        name = "liveserver";
+        publisher = "ritwickdey";
+        version = "5.7.9";
+        sha256 = "sha256-w0CYSEOdltwMFzm5ZhOxSrxqQ1y4+gLfB8L+EFFgzDc=";
+      }
     ];
 
     # extensions = with pkgs.vscode-marketplace; [
