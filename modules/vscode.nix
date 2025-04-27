@@ -96,6 +96,7 @@
     # ];
 
     userSettings = {
+      "python.terminal.activateEnvironment" = false;
       "editor.lineNumbers" = "relative";
       "files.autoSave" = "afterDelay";
       "update.mode" = "none";
