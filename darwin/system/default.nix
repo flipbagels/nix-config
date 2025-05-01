@@ -21,6 +21,7 @@
       kitty
       mkalias
       monitorcontrol
+      mutagen
       skhd
       sshfs
       unnaturalscrollwheels
