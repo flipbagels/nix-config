@@ -10,24 +10,24 @@
     mutableExtensionsDir = false;
 
     extensions = pkgs-unstable.vscode-utils.extensionsFromVscodeMarketplace [
-      # {
-      #   name = "tokyo-night";
-      #   publisher = "enkia";
-      #   version = "1.0.9";
-      #   sha256 = "2EphqiRVFw5cHAfCS+wscUM5eR48W9y96LJZQH4k0l4=";
-      # }
+      {
+        name = "tokyo-night";
+        publisher = "enkia";
+        version = "1.0.9";
+        sha256 = "2EphqiRVFw5cHAfCS+wscUM5eR48W9y96LJZQH4k0l4=";
+      }
       # {
       #   name = "houston";
       #   publisher = "astro-build";
       #   version = "0.1.2";
       #   sha256 = "Xs39Sgrvo20MVXCDet14qsQ9adSfbGrKyMUp6AV1YVk=";
       # }
-      {
-        name = "theme-vitesse";
-        publisher = "antfu";
-        version = "0.8.3";
-        sha256 = "KkpJgJBcnMeQ1G97QS/E6GY4/p9ebZRaA5pUXPd9JB0=";
-      }
+      # {
+      #   name = "theme-vitesse";
+      #   publisher = "antfu";
+      #   version = "0.8.3";
+      #   sha256 = "KkpJgJBcnMeQ1G97QS/E6GY4/p9ebZRaA5pUXPd9JB0=";
+      # }
       {
         name = "vim";
         publisher = "vscodevim";
@@ -115,8 +115,8 @@
       "vim.useSystemClipboard" = true;
       "jupyter.askForKernelRestart" = false;
       "editor.minimap.enabled" = false;
-      # "workbench.colorTheme" = "Tokyo Night";
-      "workbench.colorTheme" = "Vitesse Dark";
+      "workbench.colorTheme" = "Tokyo Night";
+      # "workbench.colorTheme" = "Vitesse Dark";
       "editor.autoClosingBrackets" = "never";
       "editor.autoClosingComments" = "never";
       "editor.autoClosingDelete" = "never";
