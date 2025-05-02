@@ -16,6 +16,7 @@
 
   environment.systemPackages =
     ( with pkgs; [
+      ffmpeg
       git
       gh
       kitty
