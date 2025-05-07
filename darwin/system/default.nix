@@ -42,6 +42,17 @@
   system.defaults.CustomUserPreferences = {
   };
 
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+    userKeyMapping = [
+      { # Also map Escape to Caps
+        HIDKeyboardModifierMappingSrc = 30064771113;
+        HIDKeyboardModifierMappingDst = 30064771129;
+      }
+    ];
+  };
+
   security.pam.enableSudoTouchIdAuth = true;
 
   system.defaults = {
