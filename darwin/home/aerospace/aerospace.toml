@@ -115,7 +115,14 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace 0'
+alt-q = 'workspace Q'
+alt-w = 'workspace W'
+alt-e = 'workspace e'
+alt-r = 'workspace R'
+alt-a = 'workspace A'
 alt-s = 'workspace S'
+alt-d = 'workspace D'
+alt-f = 'workspace F'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -128,7 +135,14 @@ alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 0'
+alt-shift-q = 'move-node-to-workspace Q'
+alt-shift-w = 'move-node-to-workspace W'
+alt-shift-e = 'move-node-to-workspace E'
+alt-shift-r = 'move-node-to-workspace R'
+alt-shift-a = 'move-node-to-workspace A'
 alt-shift-s = 'move-node-to-workspace S'
+alt-shift-d = 'move-node-to-workspace D'
+alt-shift-f = 'move-node-to-workspace F'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -167,7 +181,7 @@ run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'code'
-run = 'move-node-to-workspace S'
+run = 'move-node-to-workspace Q'
 
 
 [[on-window-detected]]
@@ -188,16 +202,16 @@ run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'outlook'
-run = 'move-node-to-workspace 7'
+run = 'move-node-to-workspace W'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'slack'
-run = 'move-node-to-workspace 8'
+run = 'move-node-to-workspace E'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'whatsapp'
-run = 'move-node-to-workspace 9'
+run = 'move-node-to-workspace R'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'spotify'
-run = 'move-node-to-workspace 0'
+run = 'move-node-to-workspace F'
