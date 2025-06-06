@@ -491,11 +491,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1746267780,
-        "narHash": "sha256-kowfV0e+IoncErxxsnqCWkx3+lTgzpGSma30+JQBsS0=",
+        "lastModified": 1749220758,
+        "narHash": "sha256-p3MoYxY+7JBNHNN1CXkclFyeVRhZ6vWJ01TUQnz84Xg=",
         "owner": "flipbagels",
         "repo": "nixvim-config",
-        "rev": "85b12edcd4c201a1450891d6cad92ffe8c79f7eb",
+        "rev": "bc7f375fba8d34859da969c01d66cbc2c51ee38a",
         "type": "github"
       },
       "original": {
