@@ -13,7 +13,7 @@ let
 in {
   programs.kitty = {
     enable = true;
-    theme = "Corvine";
+    themeFile = "Corvine";
     font = {
       name = "JetBrains Mono";
       size = 16;

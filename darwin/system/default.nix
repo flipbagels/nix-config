@@ -53,7 +53,7 @@
     ];
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   system.defaults = {
     NSGlobalDomain = {
@@ -95,20 +95,17 @@
     rm -rf /Applications/Nix\ Apps
     mkdir -p /Applications/Nix\ Apps
     find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-    while read src; do
+    while read -r src; do
       app_name=$(basename "$src")
       echo "copying $src" >&2
       ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
     done
     '';
 
-  system.activationScripts.postUserActivation.text = ''
+  system.activationScripts.activateSettings.text = ''
     # Avoid a logout/login cycle
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
   '';
-
-  # Auto upgrade nix package and the daemon service
-  services.nix-daemon.enable = true;
 
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -116,6 +113,7 @@
     enable = true;
   };
 
+  system.primaryUser = "seierl";
   users.users.seierl.home = "/Users/seierl";
 
   system.stateVersion = 5;

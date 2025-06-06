@@ -25,6 +25,7 @@
       "Microsoft-PowerPoint" = 462062816;
       "Microsoft-Excel" = 462058435;
     };
+    taps = [ "homebrew/bundle" ];
     onActivation.cleanup = "zap";
   };
 }
