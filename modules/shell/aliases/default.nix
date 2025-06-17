@@ -15,7 +15,7 @@
   # Darwin
   dcf = "cd ~/.config/nix-config";
   drb = "sudo darwin-rebuild switch --flake ~/.config/nix-config";
-  drbv = "nix flake lock --update-input nixvim ~/.config/nix-config && sudo darwin-rebuild switch --flake ~/.config/nix-config";
+  drbv = "sudo nix flake lock --update-input nixvim ~/.config/nix-config && sudo darwin-rebuild switch --flake ~/.config/nix-config";
 
   # Git
   ga = "git add";
