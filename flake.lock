@@ -524,11 +524,11 @@
         "tidalcycles-nix": "tidalcycles-nix"
       },
       "locked": {
-        "lastModified": 1750895778,
-        "narHash": "sha256-fTwqw5lZz2i+adyB5IroxfqY295KjNGfXY8MNZQEawc=",
+        "lastModified": 1750941321,
+        "narHash": "sha256-/1tY/UHMzhyZAR/QreSqUjQjjeWRTqa96QYLc2nzyF8=",
         "owner": "flipbagels",
         "repo": "nixvim-config",
-        "rev": "0dfdd01e5a4e1d308e39d94a6464a05536d41f83",
+        "rev": "e3f7da8f7495aac355154753e9ee0cdd5fca2a77",
         "type": "github"
       },
       "original": {
