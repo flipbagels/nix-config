@@ -22,6 +22,7 @@
       gh
       openconnect
       ripgrep
+      (haskellPackages.ghcWithPackages (p: [ p.tidal ]))
     ])
     ++ (with pkgs-unstable; [
       aerospace

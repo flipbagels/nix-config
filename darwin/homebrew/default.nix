@@ -15,6 +15,7 @@
       "obsidian"
       "slack"
       "spotify"
+      "supercollider"
       "zotero"
       "whatsapp"
       "zoom"

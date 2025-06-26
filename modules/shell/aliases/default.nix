@@ -36,4 +36,7 @@
   umhydra = "fusermount -u ~/mnt/hydra && echo 'Successfully unmounted ~/mnt/hydra/'";
   hydra = "cd ~/mnt/hydra";
   KILLhydra = "kill $(ps aux | grep [h]ydra.physics.ox.ac.uk | awk '{print $2}')";
+
+  # Tidal
+  tidal = "bash ${./tidal.sh}";
 }

@@ -25,6 +25,7 @@
       mutagen
       skhd
       sshfs
+      tmux
       unnaturalscrollwheels
       wget
     ])
