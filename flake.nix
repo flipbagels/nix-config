@@ -45,81 +45,92 @@
     ...
   } @ inputs: 
   {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
-      system = "x86_64-linux";
-      specialArgs = {
-        inherit inputs;
-        inherit system;
-        pkgs-unstable = import nixpkgs-unstable {
+    nixosConfigurations.nixos = builtins.mapAttrs (
+      name: host:
+      nixpkgs.lib.nixosSystem rec {
+        system = host.system;
+        specialArgs = {
+          inherit inputs;
           inherit system;
-          config.allowUnfree = true;
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
-      };
-      modules = [
-        ./nixos/system/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.lukas = import ./nixos/home;
-            backupFileExtension = "backup";
-            extraSpecialArgs = {
-              inherit inputs;
-              inherit system;
-              pkgs-unstable = import nixpkgs-unstable {
+        modules = [
+          ./hosts/${name}.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.lukas = import ./nixos/home/${name}_home.nix;
+              backupFileExtension = "backup";
+              extraSpecialArgs = {
+                inherit inputs;
                 inherit system;
-                config.allowUnfree = true;
+                pkgs-unstable = import nixpkgs-unstable {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
               };
             };
-          };
-        }
-      ];
+          }
+        ];
+      }
+    ) {
+      terra = { system = "x86_64-linux"; };
+      aqua = { system = "x86_64-linux"; };
     };
 
-    darwinConfigurations.ventus = nix-darwin.lib.darwinSystem rec {
-      system = "aarch64-darwin";
-      specialArgs = {
-        inherit inputs;
-        inherit system;
-        pkgs-unstable = import nixpkgs-unstable {
+    darwinConfigurations.ventus = builtins.mapAttrs (
+      name: host:
+      nix-darwin.lib.darwinSystem rec {
+        system = host.system;
+        specialArgs = {
+          inherit inputs;
           inherit system;
-          config.allowUnfree = true;
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
-      };
-      modules = [
-        ./darwin/system
-        mac-app-util.darwinModules.default
-        home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.seierl = import ./darwin/home;
-            sharedModules = [
-              mac-app-util.homeManagerModules.default
-            ];
-            backupFileExtension = "backup";
-            extraSpecialArgs = {
-              inherit inputs;
-              inherit system;
-              pkgs-unstable = import nixpkgs-unstable {
+        modules = [
+          ./darwin/system
+          mac-app-util.darwinModules.default
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.seierl = import ./darwin/home;
+              sharedModules = [
+                mac-app-util.homeManagerModules.default
+              ];
+              backupFileExtension = "backup";
+              extraSpecialArgs = {
+                inherit inputs;
                 inherit system;
-                config.allowUnfree = true;
+                pkgs-unstable = import nixpkgs-unstable {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
               };
             };
-          };
-        }
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-            enableRosetta = true;
-            user = "seierl";
-            autoMigrate = true;
-          };
-        }
-      ];
+          }
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              enableRosetta = true;
+              user = "seierl";
+              autoMigrate = true;
+            };
+          }
+        ];
+      }
+    ) {
+      ventus = { system = "aarch64-darwin"; };
     };
   };
 }

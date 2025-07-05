@@ -9,7 +9,7 @@
 {
   imports = [
     ./fonts.nix
-    ./hardware.nix
+    ./aqua_hardware.nix
     ./sunshine.nix
   ] ++ [
     ./hyprland.nix
