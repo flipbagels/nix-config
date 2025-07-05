@@ -1,10 +1,10 @@
 
-{ config, pkgs, ... }:
+{ config, pkgs, system, ... }:
 
 {
   programs.zsh = {
     enable = true;
-    shellAliases = import ./aliases;
+    shellAliases = import ./aliases { inherit system; };
     # initExtra = builtins.readFile ./initExtra.sh;
 
     # Enable zplug and install plugins

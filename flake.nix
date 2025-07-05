@@ -49,7 +49,7 @@
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
-          inherit system;
+        inherit system;
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -77,7 +77,7 @@
       ];
     };
 
-    darwinConfigurations.dtcmaclap12 = nix-darwin.lib.darwinSystem rec {
+    darwinConfigurations.ventus = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
       specialArgs = {
         inherit inputs;
