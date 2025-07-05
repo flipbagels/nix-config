@@ -45,7 +45,7 @@
     ...
   } @ inputs: 
   {
-    nixosConfigurations.nixos = builtins.mapAttrs (
+    nixosConfigurations = builtins.mapAttrs (
       name: host:
       nixpkgs.lib.nixosSystem rec {
         system = host.system;
@@ -83,7 +83,7 @@
       aqua = { system = "x86_64-linux"; };
     };
 
-    darwinConfigurations.ventus = builtins.mapAttrs (
+    darwinConfigurations = builtins.mapAttrs (
       name: host:
       nix-darwin.lib.darwinSystem rec {
         system = host.system;
