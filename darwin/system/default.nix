@@ -117,6 +117,8 @@
   system.primaryUser = "seierl";
   users.users.seierl.home = "/Users/seierl";
 
+  services.tailscale.enable = true;
+
   system.stateVersion = 5;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
