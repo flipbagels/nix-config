@@ -5,7 +5,9 @@
   inputs,
   ...
 }: {
-  imports = [ ];
+  imports = [
+    ../../modules/shell/bash.nix
+  ];
 
   home.packages =
     (with pkgs; [
