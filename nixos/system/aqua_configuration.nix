@@ -54,7 +54,7 @@
 
   # Networking
   networking = {
-    hostName = "nixos";
+    hostName = "aqua";
     networkmanager = {
       enable = true;
     };
