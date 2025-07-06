@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-24.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -36,6 +37,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-24,
     nixpkgs-unstable,
     home-manager,
     nix-darwin,
@@ -52,6 +54,10 @@
         specialArgs = {
           inherit inputs;
           inherit system;
+          pkgs-24 = import nixpkgs-24 {
+            inherit system;
+            config.allowUnfree = true;
+          };
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;
@@ -69,6 +75,10 @@
               extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
+                pkgs-24 = import nixpkgs-24 {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
                 pkgs-unstable = import nixpkgs-unstable {
                   inherit system;
                   config.allowUnfree = true;
