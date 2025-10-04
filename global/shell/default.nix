@@ -1,10 +1,18 @@
-
 { config, pkgs, system, ... }:
 
+if system == "x86_64-linux" then
+{
+  programs.bash = {
+    enable = true;
+    shellAliases = import ./aliases.nix { inherit system; };
+    initExtra = builtins.readFile ./initExtra.sh;
+  };
+}
+else if system == "aarch64-darwin" then
 {
   programs.zsh = {
     enable = true;
-    shellAliases = import ./aliases { inherit system; };
+    shellAliases = import ./aliases.nix { inherit system; };
     # initExtra = builtins.readFile ./initExtra.sh;
 
     # Enable zplug and install plugins
@@ -19,3 +27,4 @@
     initContent = builtins.readFile ./initExtra.zsh;
   };
 }
+else { }

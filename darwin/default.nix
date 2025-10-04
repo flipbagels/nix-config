@@ -2,10 +2,9 @@
 
 {
   imports = [
-    ./fonts.nix
-    ../homebrew
-    # ./skhd.nix
-    # ./yabai.nix
+    ../global/fonts.nix
+    ./homebrew.nix
+    ./home-manager.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -41,6 +40,9 @@
     ];
 
   system.defaults.CustomUserPreferences = {
+    "com.apple.dock" = {
+      "no-bouncing" = true;
+    };
   };
 
   system.keyboard = {

@@ -94,30 +94,12 @@
             inherit system;
             config.allowUnfree = true;
           };
+          inherit mac-app-util;
         };
         modules = [
-          ./darwin/system
+          ./hosts/${name}.nix
           mac-app-util.darwinModules.default
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.seierl = import ./darwin/home;
-              sharedModules = [
-                mac-app-util.homeManagerModules.default
-              ];
-              backupFileExtension = "backup";
-              extraSpecialArgs = {
-                inherit inputs;
-                inherit system;
-                pkgs-unstable = import nixpkgs-unstable {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
-              };
-            };
-          }
+          home-manager.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {

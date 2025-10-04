@@ -3,7 +3,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./terra_hardware.nix
+      ../nixos/hardware/lenovo-m900-tiny.nix
     ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

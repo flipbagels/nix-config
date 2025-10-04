@@ -6,18 +6,18 @@
   ...
 }: {
   imports = [
-    ../../modules/shell/bash.nix
-    ../../modules/firefox.nix
-    ../../modules/git.nix
+    ../../globa/shell
+    ../../global/firefox.nix
+    ../../global/git.nix
     # ../../modules/gtk.nix
-    ../../modules/kitty.nix
-    ../../modules/python.nix
-    ../../modules/rust.nix
-    ../../modules/vscode.nix
-    ../../modules/xdg.nix
+    ../../global/kitty.nix
+    ../../global/python.nix
+    ../../global/rust.nix
+    ../../global/vscode.nix
+    ../gui/xdg.nix
   ] ++ [
-    ../../modules/hyprland
-    ../../modules/gnome.nix
+    # ../../modules/hyprland
+    ../gnome/gnome.nix
   ];
 
   home.packages =

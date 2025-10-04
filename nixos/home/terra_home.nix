@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ../../modules/shell/bash.nix
+    ../../global/shell
   ];
 
   home.packages =

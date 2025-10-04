@@ -1,13 +1,11 @@
-{ config, pkgs, ... }:
-
 {
   homebrew = {
-    enable = true;
     brews = [
       "mas"
       "swig"
     ];
     casks = [
+      "android-file-transfer"
       "discord"
       "docker"
       "firefox"
