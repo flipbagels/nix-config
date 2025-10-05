@@ -13,7 +13,7 @@
     ../nixos/system/sunshine.nix
   ] ++ [
     # ./hyprland.nix
-    ../nixos/gui/gnome/gnome.nix
+    ../nixos/system/gnome.nix
   ];
 
   system.stateVersion = "24.05";

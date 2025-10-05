@@ -17,7 +17,7 @@
     ../gui/xdg.nix
   ] ++ [
     # ../../modules/hyprland
-    ../system/gnome.nix
+    ../gui/gnome/gnome.nix
   ];
 
   home.packages =
