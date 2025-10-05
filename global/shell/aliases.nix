@@ -4,9 +4,7 @@
   df = "df -h";
 
   # Vim
-  nano = "nvim";
   v = "nvim";
-  vim = "nvim";
   vi = "nix run ~/.config/nvim/nixvim-config/";
   cfv = "cd ~/.config/nvim/nixvim-config";
 
