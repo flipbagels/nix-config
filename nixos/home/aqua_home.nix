@@ -10,10 +10,10 @@
     ../../global/firefox.nix
     ../../global/git.nix
     # ../../modules/gtk.nix
-    # ../../global/kitty.nix
+    ../../global/kitty.nix
     ../../global/python.nix
     ../../global/rust.nix
-    # ../../global/vscode.nix
+    ../../global/vscode.nix
     ../gui/xdg.nix
   ] ++ [
     # ../../modules/hyprland

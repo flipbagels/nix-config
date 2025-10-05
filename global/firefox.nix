@@ -9,7 +9,7 @@
         id = 0;
         name = "default";
         isDefault = true;
-        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
           darkreader
           ublock-origin
           zotero-connector

@@ -8,7 +8,7 @@
 
 {
   imports = [
-    # ../global/fonts.nix
+    ../global/fonts.nix
     ../nixos/hardware/lenovo-slim-7-14itl05.nix
     ../nixos/system/sunshine.nix
   ] ++ [
@@ -90,7 +90,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
