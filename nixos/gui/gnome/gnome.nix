@@ -39,6 +39,10 @@ in
       natural-scroll = false;
     };
 
+    "org/gnome/desktop/input-sources" = {
+      xkb-options = "caps:swapescape";
+    };
+
     "org/gnome/shell/extensions/com/github/hermes83/compiz-windows-effect" = {
       friction = 4.0;
       spring-k = 5.0;
@@ -59,10 +63,10 @@ in
 
     
     "org/gnome/desktop/background" =
-      let wallpaper = "forest-road.jpg";
+      let wallpaper = "orange_blue.jpg";
       in {
-        picture-uri = "file:///etc/nixos/nixos-config/images/${wallpaper}";
-        picture-uri-dark = "file:///etc/nixos/nixos-config/images/${wallpaper}";
+        picture-uri = "file:///etc/nixos/nix-config/global/wallpapers/${wallpaper}";
+        picture-uri-dark = "file:///etc/nixos/nix-config/global/wallpapers/${wallpaper}";
       };
   };
 }
