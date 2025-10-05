@@ -8,7 +8,7 @@
 
 {
   imports = [
-    ../global/fonts.nix
+    # ../global/fonts.nix
     ../nixos/hardware/lenovo-slim-7-14itl05.nix
     ../nixos/system/sunshine.nix
   ] ++ [
