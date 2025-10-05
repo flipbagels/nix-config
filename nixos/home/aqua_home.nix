@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ../../globa/shell
+    ../../global/shell
     ../../global/firefox.nix
     ../../global/git.nix
     # ../../modules/gtk.nix
@@ -17,7 +17,7 @@
     ../gui/xdg.nix
   ] ++ [
     # ../../modules/hyprland
-    ../gnome/gnome.nix
+    ../system/gnome.nix
   ];
 
   home.packages =
