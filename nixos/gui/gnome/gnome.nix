@@ -15,7 +15,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    gnome.gnome-remote-desktop
+    gnome-remote-desktop
     ]
     ++ gnomeExtensionsList;
 

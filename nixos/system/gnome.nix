@@ -26,29 +26,29 @@
   environment.systemPackages = with pkgs; [
     dconf
     firefox
-    gnome.gnome-terminal
+    gnome-terminal
   ];
 
   # Exclude following packages
   environment.gnome.excludePackages = (with pkgs; [
-    gedit # text editor
-    gnome-connections
-    gnome-console
-    gnome-photos
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
     cheese # webcam tool
     epiphany # web browser
     evince # document viewer
+    geary # email reader
+    gedit # text editor
     gnome-calendar
     gnome-characters
     gnome-clocks
     gnome-contacts
+    gnome-connections
+    gnome-console
     gnome-maps
     gnome-music
+    gnome-photos
+    gnome-tour
     gnome-weather
-    geary # email reader
     yelp # Help guide
+  ]) ++ (with pkgs.gnome; [
   ]);
 
   # Remove NixOS manual
