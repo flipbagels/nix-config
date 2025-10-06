@@ -14,10 +14,10 @@
     ../../global/python.nix
     ../../global/rust.nix
     ../../global/vscode.nix
-    ../gui/xdg.nix
+    ../../nixos/global/xdg.nix
   ] ++ [
-    # ../../modules/hyprland
-    ../gui/gnome/gnome.nix
+    # ../../nixos/hyprland/home
+    ../../nixos/gnome/home
   ];
 
   home.packages =

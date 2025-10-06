@@ -58,13 +58,13 @@
           };
         };
         modules = [
-          ./hosts/${name}.nix
+          ./hosts/${name}
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lukas = import ./nixos/home/${name}_home.nix;
+              users.lukas = import ./hosts/${name}/home.nix;
               backupFileExtension = "backup";
               extraSpecialArgs = {
                 inherit inputs;
@@ -97,7 +97,7 @@
           inherit mac-app-util;
         };
         modules = [
-          ./hosts/${name}.nix
+          ./hosts/${name}
           mac-app-util.darwinModules.default
           home-manager.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew

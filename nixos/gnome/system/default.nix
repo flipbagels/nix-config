@@ -20,7 +20,6 @@
   services.xserver.xkb = {
     layout = "gb";
     variant = "";
-    options = "caps:swapescape";
   };
 
   # System packages

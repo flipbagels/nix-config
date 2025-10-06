@@ -1,6 +1,6 @@
 {
   imports = [
-    ../darwin
+    ../../darwin
   ];
 
   modules.home-manager.enable = true;

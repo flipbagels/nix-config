@@ -1,5 +1,5 @@
 {
-  config,
+
   pkgs,
   pkgs-unstable,
   lib,
@@ -8,12 +8,12 @@
 
 {
   imports = [
-    ../global/fonts.nix
-    ../nixos/hardware/lenovo-slim-7-14itl05.nix
-    ../nixos/system/sunshine.nix
+    ../../global/fonts.nix
+    ../../nixos/global/hardware/lenovo-slim-7-14itl05.nix
+    ../../nixos/global/sunshine.nix
   ] ++ [
-    # ./hyprland.nix
-    ../nixos/system/gnome.nix
+    # ../../nixos/hyprland/system
+    ../../nixos/gnome/system
   ];
 
   system.stateVersion = "24.05";
@@ -28,7 +28,7 @@
   users.users.lukas = {
     isNormalUser = true;
     description = "Lukas";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "input" "uinput"];
     packages = with pkgs; [
     ];
   };
@@ -51,6 +51,19 @@
     ++ (with pkgs-unstable; [
       neovim
     ]);
+
+  # Swap CAPS and ESC
+  hardware.uinput.enable = true;
+  services.kanata = {
+    enable = true;
+    keyboards.internal = {
+      devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
+      config = ''
+        (defsrc esc caps)
+        (deflayer base caps esc)
+      '';
+    };
+  };
 
   # Networking
   networking = {
