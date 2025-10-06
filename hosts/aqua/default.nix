@@ -8,8 +8,8 @@
 
 {
   imports = [
+    ./hardware.nix
     ../../global/fonts.nix
-    ../../nixos/global/hardware/lenovo-slim-7-14itl05.nix
     ../../nixos/global/sunshine.nix
   ] ++ [
     # ../../nixos/hyprland/system
