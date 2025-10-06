@@ -1,4 +1,8 @@
 Nix config files for NixOS and Nix-Darwin.
 
-Current NixOS device: Lenovo Yoga Slim 7 14ITL05\
-Current Nix-Darwin device: MacBook Air M3.
+| Host   | Device                     |
+| ------ | -------------------------- |
+| Aqua   | Lenovo Yoga Slim 7 14ITL05 |
+| Terra  | Lenovo M900 Tiny           |
+| Ventus | MacBook Air M3             |
+
