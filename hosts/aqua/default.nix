@@ -51,6 +51,11 @@
     ++ (with pkgs-unstable; [
       neovim
     ]);
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  programs.gamemode.enable = true;
 
   # Swap CAPS and ESC
   hardware.uinput.enable = true;
