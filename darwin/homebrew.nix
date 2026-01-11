@@ -9,6 +9,7 @@
       "discord"
       "docker"
       "firefox"
+      "logi-options+"
       "microsoft-teams"
       "obsidian"
       "slack"
