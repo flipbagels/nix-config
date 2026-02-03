@@ -29,6 +29,9 @@ default-root-container-orientation = 'auto'
 
 on-focused-monitor-changed = []
 
+[workspace-to-monitor-force-assignment]
+C = 'secondary'
+
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
@@ -122,6 +125,7 @@ alt-r = 'workspace R'
 alt-a = 'workspace A'
 alt-s = 'workspace S'
 alt-d = 'workspace D'
+alt-c = 'workspace C'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -141,6 +145,7 @@ alt-shift-r = 'move-node-to-workspace R'
 alt-shift-a = 'move-node-to-workspace A'
 alt-shift-s = 'move-node-to-workspace S'
 alt-shift-d = 'move-node-to-workspace D'
+alt-shift-c = 'move-node-to-workspace C'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'

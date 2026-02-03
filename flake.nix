@@ -58,13 +58,13 @@
           };
         };
         modules = [
-          ./hosts/${name}.nix
+          ./hosts/${name}
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lukas = import ./nixos/home/${name}_home.nix;
+              users.lukas = import ./hosts/${name}/home.nix;
               backupFileExtension = "backup";
               extraSpecialArgs = {
                 inherit inputs;
@@ -94,30 +94,12 @@
             inherit system;
             config.allowUnfree = true;
           };
+          inherit mac-app-util;
         };
         modules = [
-          ./darwin/system
+          ./hosts/${name}
           mac-app-util.darwinModules.default
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.seierl = import ./darwin/home;
-              sharedModules = [
-                mac-app-util.homeManagerModules.default
-              ];
-              backupFileExtension = "backup";
-              extraSpecialArgs = {
-                inherit inputs;
-                inherit system;
-                pkgs-unstable = import nixpkgs-unstable {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
-              };
-            };
-          }
+          home-manager.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {

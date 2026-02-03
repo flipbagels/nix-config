@@ -7,13 +7,13 @@
 }: {
     imports = [
       ./aerospace
-      ../../modules/shell/zsh.nix
-      ../../modules/git.nix
-      ../../modules/julia.nix
-      ../../modules/kitty.nix
-      ../../modules/python.nix
-      ../../modules/rust.nix
-      ../../modules/vscode.nix
+      ../../global/shell
+      ../../global/git.nix
+      ../../global/julia.nix
+      ../../global/kitty.nix
+      ../../global/python.nix
+      ../../global/rust.nix
+      ../../global/vscode.nix
     ];
 
   # Only include CLI tools here. GUI applications declared in system config so that they show up in spotlight search
@@ -26,7 +26,6 @@
     ])
     ++ (with pkgs-unstable; [
       aerospace
-      yazi
     ])
     ++ [
       inputs.nixvim.packages.aarch64-darwin.default
