@@ -25,10 +25,10 @@ in {
       map ctrl+shift+/ next_layout
       map ctrl+shift+n next_tab
       map ctrl+shift+p previous_tab
-      map ctrl+h neighboring_window left
-      map ctrl+j neighboring_window down
-      map ctrl+k neighboring_window up
-      map ctrl+l neighboring_window left
+      map ctrl+shift+h neighboring_window left
+      map ctrl+shift+j neighboring_window down
+      map ctrl+shift+k neighboring_window up
+      map ctrl+shift+l neighboring_window left
 
     "
     + darwinExtraConfig;
